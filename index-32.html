@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>學測國文｜108–115 歷屆試題練習室</title>
+<style>
+:root{--bg:#faf7f2;--fg:#2b2622;--card:#fff;--ac:#9b2c2c;--mut:#7a7068;--bd:#e6dfd5;--ok:#2f7d4f;--ng:#b42318}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#ece6de;--card:#26211e;--ac:#e8836f;--mut:#a39a90;--bd:#3a332e;--ok:#5fc287;--ng:#f08a7e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.8 "Noto Serif TC","PingFang TC","Microsoft JhengHei",serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.7rem;margin:.2em 0}h2{font-size:1.15rem;border-left:4px solid var(--ac);padding-left:10px;margin-top:2em}
+.sub{color:var(--mut);font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:12px 0}
+.years{display:flex;flex-wrap:wrap;gap:8px}
+.years a,button{font:inherit;font-size:.92rem;padding:6px 14px;border:1px solid var(--ac);border-radius:20px;background:transparent;color:var(--ac);cursor:pointer;text-decoration:none}
+button.on,button.pri{background:var(--ac);color:#fff}
+label.opt{display:block;padding:6px 10px;margin:4px 0;border:1px solid var(--bd);border-radius:8px;cursor:pointer}
+label.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+label.opt.wrong{border-color:var(--ng);background:color-mix(in srgb,var(--ng) 14%,transparent)}
+.pass{white-space:pre-wrap;border-left:3px solid var(--bd);padding:4px 12px;color:var(--mut)}
+.exp{margin-top:10px;padding:10px;border-radius:8px;background:color-mix(in srgb,var(--ac) 8%,transparent);font-size:.93rem}
+.tag{font-size:.78rem;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border-bottom:1px solid var(--bd);padding:6px;text-align:left}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+</style>
+</head>
+<body>
+<main>
+<div class="sub">GSAT CHINESE PRACTICE · 108–115</div>
+<h1>學測國文｜歷屆試題練習室</h1>
+<p class="sub">官方原卷連結 × 分類單題練習 × 自動核對 × 錯題紀錄。紀錄只存在本機瀏覽器，可匯出備份。</p>
+
+<h2>官方歷屆試卷（108–115）</h2>
+<div class="card">
+<p class="sub" style="margin-top:0">試題本與參考答案請至大考中心下載，本站不是大考中心網站，亦不轉載原題。</p>
+<div class="years" id="years"></div>
+<p class="sub">到官方頁面後選擇「國文」與對應年度。</p>
+</div>
+
+<h2>依序練習（一次一題）</h2>
+<div class="card">
+<div class="row" id="filters" style="margin-top:0"></div>
+<div class="tag" id="prog" style="margin-top:10px"></div>
+<div id="q"></div>
+<div class="row"><button id="prev">← 上一題</button><button id="chk" class="pri">檢查答案</button><button id="nxt">下一題 →</button></div>
+</div>
+
+<h2>學習紀錄</h2>
+<div class="card">
+<div id="stat" class="sub"></div>
+<table><thead><tr><th>題目</th><th>類型</th><th>你的答案</th><th>正解</th></tr></thead><tbody id="wr"></tbody></table>
+<div class="row"><button id="exp">匯出 JSON 備份</button><button id="clr">清除紀錄</button></div>
+</div>
+
+<p class="sub">題目為自編，非歷屆原題；作文請自行對照官方評分指引。</p>
+</main>
+<script>
+const OFFICIAL="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634";
+// 新增題目：照格式加到陣列即可。ans 為選項編號字串，多選如 "124"
+let Q=[];
+const $=s=>document.querySelector(s),KEY="gsat-chinese-v1";
+let log=[];try{log=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(log))}catch(e){}};
+$("#years").innerHTML=[108,109,110,111,112,113,114,115].map(y=>`<a href="${OFFICIAL}" target="_blank" rel="noopener">${y} 學年度</a>`).join("");
+let type="全部",list=[],idx=0,done={};
+async function init(){
+ try{Q=await (await fetch("questions.json",{cache:"no-cache"})).json()}
+ catch(e){$("#q").innerHTML="<p>讀不到 questions.json。請部署到 GitHub Pages，或在本機用 <code>python -m http.server</code> 開啟。</p>";return}
+ drawF();setList();stat()}
+function setList(){list=Q.filter(q=>type=="全部"||q.type==type);idx=0;done={};show()}
+function drawF(){const ts=["全部",...new Set(Q.map(q=>q.type))];
+ $("#filters").innerHTML=ts.map(t=>`<button class="${t==type?"on":""}" data-t="${t}">${t}</button>`).join("");
+ document.querySelectorAll("#filters button").forEach(b=>b.onclick=()=>{type=b.dataset.t;drawF();setList()})}
+function show(){
+ if(!list.length){$("#q").innerHTML="<p>此類別沒有題目。</p>";return}
+ if(idx>=list.length){summary();return}
+ const q=list[idx],d=done[q.id];
+ $("#prog").textContent=`第 ${idx+1} / ${list.length} 題`;
+ $("#q").innerHTML=`<div class="tag">${q.type}・${q.multi?"多選題":"單選題"}</div>`+(q.pass?`<div class="pass">${q.pass}</div>`:"")+`<p>${q.stem}</p>`+
+ q.opts.map((o,i)=>`<label class="opt"><input type="${q.multi?"checkbox":"radio"}" name="o" value="${i+1}"${d&&d.got.includes(i+1)?" checked":""}> (${i+1}) ${o}</label>`).join("")+`<div id="fb"></div>`;
+ $("#chk").disabled=!!d;$("#prev").disabled=idx==0;
+ if(d)mark(q,d.got,d.ok)}
+function mark(q,got,ok){
+ document.querySelectorAll("#q label").forEach((l,i)=>{const v=String(i+1);if(q.ans.includes(v))l.classList.add("right");else if(got.includes(v))l.classList.add("wrong")});
+ $("#fb").innerHTML=`<div class="exp"><b style="color:var(${ok?"--ok":"--ng"})">${ok?"答對了":"答錯了"}</b>　正解：${q.ans.split("").map(c=>"("+c+")").join("")}<br>${q.exp}</div>`}
+$("#chk").onclick=()=>{const q=list[idx],got=[...document.querySelectorAll("input[name=o]:checked")].map(i=>i.value).sort().join("");
+ if(!got)return;const ok=got==q.ans;done[q.id]={got,ok};mark(q,got,ok);$("#chk").disabled=true;
+ log.push({id:q.id,type:q.type,stem:q.stem.slice(0,18),got,ans:q.ans,ok,t:Date.now()});save();stat()};
+$("#nxt").onclick=()=>{if(idx<list.length){idx++;show()}};
+$("#prev").onclick=()=>{if(idx>0){idx--;show()}};
+function summary(){const r=list.filter(q=>done[q.id]&&done[q.id].ok).length;
+ $("#prog").textContent="練習完成";
+ $("#q").innerHTML=`<p><b>本輪成績：${r} / ${list.length} 題整題答對</b>（未作答視為未答對）</p><button id="again" class="pri">重新開始</button>`;
+ $("#again").onclick=setList;$("#chk").disabled=true;$("#prev").disabled=false}
+function stat(){const n=log.length,r=log.filter(x=>x.ok).length;
+ $("#stat").textContent=n?`累計作答 ${n} 題，整題答對率 ${Math.round(r/n*100)}%`:"尚無紀錄";
+ $("#wr").innerHTML=log.filter(x=>!x.ok).slice(-15).reverse().map(x=>`<tr><td>${x.stem}…</td><td>${x.type}</td><td>${x.got}</td><td>${x.ans}</td></tr>`).join("")}
+$("#exp").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(log,null,1)],{type:"application/json"}));a.download="chinese-log.json";a.click()};
+$("#clr").onclick=()=>{if(confirm("確定清除？")){log=[];save();stat()}};
+init();
+</script>
+</body>
+</html>
