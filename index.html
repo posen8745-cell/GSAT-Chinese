@@ -1,104 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>學測國文｜108–115 歷屆試題練習室</title>
+<meta name="description" content="學測國文練習室：108–115年度官方試卷、國綜分類單題練習、國寫草稿、錯題訂正與成績統計。">
+<title>學測國文｜108–115 國綜・國寫練習室</title>
 <style>
-:root{--bg:#faf7f2;--fg:#2b2622;--card:#fff;--ac:#9b2c2c;--mut:#7a7068;--bd:#e6dfd5;--ok:#2f7d4f;--ng:#b42318}
-@media(prefers-color-scheme:dark){:root{--bg:#1c1917;--fg:#ece6de;--card:#26211e;--ac:#e8836f;--mut:#a39a90;--bd:#3a332e;--ok:#5fc287;--ng:#f08a7e}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.8 "Noto Serif TC","PingFang TC","Microsoft JhengHei",serif}
-main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.7rem;margin:.2em 0}h2{font-size:1.15rem;border-left:4px solid var(--ac);padding-left:10px;margin-top:2em}
-.sub{color:var(--mut);font-size:.9rem}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:12px 0}
-.years{display:flex;flex-wrap:wrap;gap:8px}
-.years a,button{font:inherit;font-size:.92rem;padding:6px 14px;border:1px solid var(--ac);border-radius:20px;background:transparent;color:var(--ac);cursor:pointer;text-decoration:none}
-button.on,button.pri{background:var(--ac);color:#fff}
-label.opt{display:block;padding:6px 10px;margin:4px 0;border:1px solid var(--bd);border-radius:8px;cursor:pointer}
-label.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
-label.opt.wrong{border-color:var(--ng);background:color-mix(in srgb,var(--ng) 14%,transparent)}
-.pass{white-space:pre-wrap;border-left:3px solid var(--bd);padding:4px 12px;color:var(--mut)}
-.exp{margin-top:10px;padding:10px;border-radius:8px;background:color-mix(in srgb,var(--ac) 8%,transparent);font-size:.93rem}
-.tag{font-size:.78rem;color:var(--mut)}
-table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border-bottom:1px solid var(--bd);padding:6px;text-align:left}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+:root{font-family:ui-sans-serif,system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;color:#183f36;background:#f3f6ef;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}button,select,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #c99c4d;outline-offset:2px}a{color:#206e58;text-underline-offset:3px}
+header{background:#f9faf7;border-bottom:1px solid #dce7dc}.top{max-width:1160px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 23px}.brand{letter-spacing:2px;font-size:16px;font-weight:800}.motto,.muted{color:#667f76}.motto{font-size:13px}
+main{max-width:1160px;margin:auto;padding:35px 23px 58px}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:750;color:#2a8269}h1{font-size:clamp(29px,4.3vw,45px);line-height:1.26;letter-spacing:1px;margin:10px 0 13px}h2{font-size:24px;margin:0 0 13px}h3{font-size:18px;margin:0 0 10px}p{line-height:1.8}.lead{margin:0;color:#657c74;font-size:15px}.tabs{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 27px}.tab,.btn{border:1px solid #d5e3d7;background:white;border-radius:11px;padding:11px 15px;color:#1c4d40;font-weight:700}.tab.active,.btn.primary{background:#246b56;color:white;border-color:#246b56}.tab:not(.active):hover,.btn:not(.primary):hover{background:#ecf3ea}.panel{border:1px solid #dae6da;background:white;border-radius:20px;padding:23px;box-shadow:0 8px 28px #244c3010}.hidden{display:none!important}[hidden]{display:none!important}.pill{display:inline-flex;align-items:center;padding:7px 11px;border-radius:10px;background:#eaf2e7;color:#326853;font-size:13px;line-height:1.4}.pill.warm{background:#fbf2dc;color:#816428}.kpis{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.paper-card{display:flex;flex-direction:column;gap:8px}.paper-card .paper-title{font-size:21px;font-weight:850}.paper-card p{margin:0;font-size:14px}.paper-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}.paper-actions a{font-size:13px;font-weight:700;text-decoration:none;padding:9px 11px;border:1px solid #d7e4d6;border-radius:9px}.paper-actions a:hover{background:#ebf3e8}.notice{background:#fcfcf5;border:1px solid #e7e7d5;border-radius:13px;padding:13px 15px;line-height:1.7;font-size:13px;color:#617263}.practice{display:grid;grid-template-columns:285px minmax(0,1fr);gap:17px}.side label,.field label{display:block;font-size:13px;font-weight:750;margin:15px 0 7px}select,.field input{width:100%;min-height:44px;border:1px solid #d7e3d5;border-radius:10px;background:#fbfcfa;color:#21483c;padding:8px 12px}.side .btn{display:block;width:100%;margin-top:12px}.checkline{display:flex;gap:8px;align-items:center;margin-top:13px;font-size:14px}.checkline input{accent-color:#246b56}.question-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.question-no{font-size:27px;margin:18px 0 12px;font-weight:850}.passage{font-family:"Noto Serif TC","PingFang TC",serif;background:#f6f8f3;border-left:4px solid #92b4a3;border-radius:0 12px 12px 0;padding:17px 18px;white-space:pre-wrap;line-height:2.1;font-size:16px;margin:16px 0}.stem{font-family:"Noto Serif TC","PingFang TC",serif;font-size:19px;line-height:1.95;font-weight:650;margin:17px 0}.choice{display:flex;gap:13px;align-items:flex-start;background:#fcfdfb;border:1px solid #dce6da;border-radius:12px;padding:13px 15px;margin:10px 0;cursor:pointer;line-height:1.85}.choice input{width:18px;height:18px;margin-top:5px;accent-color:#26725b;flex:none}.choice:has(input:checked){background:#e8f3eb;border-color:#75a88a}.choice.right{border-color:#5bb27f;background:#e7f6ec}.choice.wrong{border-color:#c67969;background:#fff0eb}.choice-index{font-weight:850;color:#31715b;min-width:18px}.feedback{border-radius:11px;padding:14px 16px;margin:15px 0;background:#f2f7ed;line-height:1.8}.feedback.bad{background:#fff1e9}.feedback strong{display:block;font-size:16px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:21px}.actions .btn{flex:1}.actions .btn.primary{flex:2}.progress{height:8px;overflow:hidden;background:#e8eee4;border-radius:12px;margin:16px 0}.progress span{height:100%;display:block;background:#2c8064;transition:width .15s}.small{font-size:13px}.empty{padding:38px 15px;text-align:center;color:#708379}.summary{font-size:17px}.summary strong{font-size:26px}.notes-list{display:grid;gap:12px}.wrong-card{border:1px solid #dbe8d8;border-radius:14px;padding:17px}.wrong-card .title{font-weight:760}.wrong-card textarea,.writing-draft{width:100%;min-height:95px;border:1px solid #d5e3d5;border-radius:11px;background:#fcfdfa;padding:12px;resize:vertical;color:#21483c;line-height:1.8}.writing-draft{min-height:300px;font-family:"Noto Serif TC","PingFang TC",serif;font-size:17px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}th,td{border-bottom:1px solid #e2eae0;padding:11px 9px}th{color:#678377}.bar{background:#edf3eb;border-radius:10px;height:10px;overflow:hidden}.bar>span{height:100%;display:block;background:#2d8867}.mini-tag{color:#668276;font-size:12px}.timer{font-size:19px;font-variant-numeric:tabular-nums;font-weight:800}.timer.warn{color:#bc5a32}.footer{color:#788d83;font-size:12px;line-height:1.85;margin-top:34px}.split{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.stack{display:flex;flex-direction:column;gap:14px}.helptext{font-size:13px;color:#667e74}.item-links{display:flex;gap:9px;flex-wrap:wrap}.item-links a{border-radius:9px;border:1px solid #d4e2d7;padding:9px 12px;text-decoration:none;font-size:13px;font-weight:700}hr{border:0;border-top:1px solid #e4ece3;margin:20px 0}
+@media(max-width:780px){.practice{grid-template-columns:1fr}.top{padding:15px}.motto{display:none}main{padding:26px 15px 55px}.panel{padding:18px}.tabs{gap:7px}.tab{padding:10px 11px;font-size:13px}.question-no{font-size:24px}.question-meta{gap:6px}.actions{flex-direction:column}.actions .btn{width:100%}.passage{padding:13px;font-size:15px}.choice{padding:12px}.grid{grid-template-columns:1fr}}
+@media print{header,.tabs,.side,.actions,.btn,.paper-actions{display:none!important}.practice{display:block}.panel{box-shadow:none}}
 </style>
 </head>
 <body>
+<header><div class="top"><div class="brand">GSAT / 國文練習室</div><div class="motto">每天練一題，把閱讀與語文能力練熟。</div></div></header>
 <main>
-<div class="sub">GSAT CHINESE PRACTICE · 108–115</div>
-<h1>學測國文｜歷屆試題練習室</h1>
-<p class="sub">官方原卷連結 × 分類單題練習 × 自動核對 × 錯題紀錄。紀錄只存在本機瀏覽器，可匯出備份。</p>
-
-<h2>官方歷屆試卷（108–115）</h2>
-<div class="card">
-<p class="sub" style="margin-top:0">試題本與參考答案請至大考中心下載，本站不是大考中心網站，亦不轉載原題。</p>
-<div class="years" id="years"></div>
-<p class="sub">到官方頁面後選擇「國文」與對應年度。</p>
+<div class="eyebrow">GSAT CHINESE PRACTICE · 108–115</div>
+<h1>把國文考題，練成自己的實力。</h1>
+<p class="lead">官方歷屆原卷 × 單題完整作答 × 分類訓練 × 國寫草稿 × 錯題與成績追蹤</p>
+<nav class="tabs" aria-label="網站功能">
+<button class="tab active" data-tab="papers" type="button">歷屆官方試卷</button>
+<button class="tab" data-tab="practice" type="button">國綜・單題練習</button>
+<button class="tab" data-tab="writing" type="button">國寫練習</button>
+<button class="tab" data-tab="wrongs" type="button">錯題複習</button>
+<button class="tab" data-tab="stats" type="button">成績統計</button>
+<button class="tab" data-tab="guide" type="button">使用說明</button>
+</nav>
+<section id="view-papers">
+<div class="split"><div><h2>108–115 學年度官方試卷</h2><p class="muted small" style="margin:0 0 16px">舊制「國文選擇題」與新制「國綜」分開標示，國寫另列。</p></div><span class="pill">8 學年度 · 國綜／國寫</span></div>
+<div id="paperGrid" class="grid"></div>
+<div class="notice" style="margin-top:17px"><strong>題目來源說明：</strong>本區連至大考中心官方歷屆試題及答案頁面。下方互動練習題為獨立的自編題庫，不會把自編題標示成官方歷屆原題。官方非選擇題、國寫需人工評閱。</div>
+</section>
+<section id="view-practice" class="hidden">
+<div class="split"><h2>國綜・一次一題完整練習</h2><span class="pill">題幹、選項、解析都在同一頁</span></div>
+<div class="practice">
+<aside class="panel side"><h3>這次怎麼練？</h3>
+<label for="category">題型單元</label><select id="category"><option value="全部">全部題型</option></select>
+<label for="source">題庫來源</label><select id="source"><option value="all">全部自編題</option><option value="原始">上傳的原始 5 題</option><option value="延伸">新增的延伸題</option></select>
+<label for="count">題數</label><select id="count"><option value="10">10 題</option><option value="20" selected>20 題</option><option value="all">全部</option></select>
+<label class="checkline"><input type="checkbox" id="random" checked> 隨機抽題，不重複</label>
+<label class="checkline"><input type="checkbox" id="timed"> 90 分鐘限時練習</label>
+<button class="btn primary" type="button" id="start">開始新一輪練習</button>
+<button class="btn" type="button" id="resume" disabled>繼續未完成的練習</button>
+<button class="btn" type="button" id="onlyWrong">只練目前錯題</button>
+<p id="poolInfo" class="helptext"></p>
+<div class="notice">本題庫內容為自編的學測風格練習，並非 108–115 年的官方原題。模考計時只是練習工具，不換算正式級分。</div>
+</aside>
+<article class="panel" id="questionPanel" aria-live="polite">
+<div class="question-meta"><span class="eyebrow" id="stage">READY TO PRACTICE</span><span id="clock" class="timer muted">未計時</span></div>
+<div class="kpis"><span id="qProgress" class="pill">尚未開始</span><span id="qScore" class="pill">答對 0 · 答錯 0</span></div>
+<div class="progress" aria-label="練習進度"><span id="progressBar" style="width:0%"></span></div>
+<div id="questionBody"><div class="empty">選擇題型與題數後，按「開始新一輪練習」。</div></div>
+<div class="actions" id="qActions" hidden><button class="btn" id="prev" type="button">← 上一題</button><button class="btn" id="unknown" type="button">不會・顯示答案</button><button class="btn primary" id="check" type="button">檢查本題答案</button><button class="btn primary" id="next" type="button">下一題 →</button></div>
+</article>
 </div>
-
-<h2>依序練習（一次一題）</h2>
-<div class="card">
-<div class="row" id="filters" style="margin-top:0"></div>
-<div class="tag" id="prog" style="margin-top:10px"></div>
-<div id="q"></div>
-<div class="row"><button id="prev">← 上一題</button><button id="chk" class="pri">檢查答案</button><button id="nxt">下一題 →</button></div>
-</div>
-
-<h2>學習紀錄</h2>
-<div class="card">
-<div id="stat" class="sub"></div>
-<table><thead><tr><th>題目</th><th>類型</th><th>你的答案</th><th>正解</th></tr></thead><tbody id="wr"></tbody></table>
-<div class="row"><button id="exp">匯出 JSON 備份</button><button id="clr">清除紀錄</button></div>
-</div>
-
-<p class="sub">題目為自編，非歷屆原題；作文請自行對照官方評分指引。</p>
+</section>
+<section id="view-writing" class="hidden">
+<h2>國寫・寫作練習</h2><div class="notice">111 年起國綜、國寫的考試時間各為 90 分鐘；108–110 年舊制國文選擇題為 80 分鐘。本區為自編寫作題；可保存草稿與使用檢核清單，但不提供冒充正式閱卷的 AI 分數。</div>
+<div class="practice" style="margin-top:17px"><aside class="panel side"><h3>選擇題目</h3><label for="writingSelect">自編寫作練習</label><select id="writingSelect"></select><p class="helptext">草稿自動保存在目前瀏覽器。官方歷屆國寫題目請由「歷屆官方試卷」進入查看。</p><button class="btn" id="writingDownload" type="button">下載這篇草稿 TXT</button><button class="btn" id="writingClear" type="button">清空這篇草稿</button></aside>
+<div class="panel"><span class="eyebrow">WRITING PRACTICE / 自編</span><h3 style="margin-top:13px" id="writingTitle"></h3><p id="writingPrompt"></p><label class="small" for="writingText"><strong>你的文章</strong></label><textarea class="writing-draft" id="writingText" placeholder="在此寫下自己的觀點、經驗和例子……"></textarea><div class="split"><span class="small muted" id="writingCount">0 字</span><span class="small muted" id="writingSaved">本機自動儲存</span></div><hr><h3>自我檢核</h3><div id="writingChecks" class="notes-list small"></div></div></div>
+</section>
+<section id="view-wrongs" class="hidden">
+<div class="split"><h2>錯題複習與訂正筆記</h2><button class="btn primary" type="button" id="practiceWrongs">重新練習待訂正題</button></div><p class="muted small">答錯後會進入待訂正清單。重練答對會標為已掌握，但答錯紀錄仍保留在累計統計。</p><div id="wrongList" class="notes-list"></div>
+</section>
+<section id="view-stats" class="hidden"><h2>學習成績與紀錄</h2><div id="statsChips" class="grid"></div><div class="panel" style="margin-top:16px"><h3>各題型正確率</h3><div id="typeStats" class="stack"></div></div><div class="panel" style="margin-top:16px"><h3>最近練習</h3><div class="tablewrap"><table><thead><tr><th>日期</th><th>範圍</th><th>答對／總題數</th><th>正確率</th></tr></thead><tbody id="historyTable"></tbody></table></div><hr><div class="actions"><button class="btn" id="exportData" type="button">匯出學習紀錄 JSON</button><label class="btn" for="importData" style="cursor:pointer">匯入備份 JSON</label><input id="importData" type="file" accept=".json,application/json" class="hidden"><button class="btn" id="clearData" type="button">清除學習紀錄</button></div></div></section>
+<section id="view-guide" class="hidden"><div class="panel"><h2>使用方式與資料說明</h2><p>「歷屆官方試卷」可依 108–115 學年度開啟大考中心的試卷、答案及國寫相關資料。不同年度題型不同，108–110 年的國文選擇題及 111 年起的國綜標示分開處理。</p><p>「國綜・單題練習」顯示完整自編題目與五個選項，一次只顯示一題，答題後提供解析。單選、多選均以整題完全正確作為本站練習統計標準，不代表學測正式配分。</p><p>「國寫練習」可自由寫作並保存草稿，須由老師或有經驗的評閱者依官方原則評閱。資料儲存在目前瀏覽器 localStorage，請定期至「成績統計」匯出備份。</p><p>擴充題庫：編輯與 <code>index.html</code> 同層的 <code>questions.json</code>。每題須含有 <code>id</code>、<code>type</code>、<code>stem</code>、<code>opts</code>、<code>ans</code>、<code>exp</code>，可另加 <code>pass</code>、<code>multi</code>、<code>source</code>。這份題庫是自編，不能改標為官方原題。</p><div class="item-links"><a href="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634" target="_blank" rel="noopener">大考中心歷屆試題</a><a href="https://www.ceec.edu.tw/" target="_blank" rel="noopener">大考中心首頁</a></div></div></section>
+<p class="footer">本網站是個人練習工具，非大考中心官方系統。官方試題內容及評分以大考中心發布版本為準。學習資料只儲存在目前瀏覽器。</p>
 </main>
 <script>
-const OFFICIAL="https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634";
-// 新增題目：照格式加到陣列即可。ans 為選項編號字串，多選如 "124"
-let Q=[];
-const $=s=>document.querySelector(s),KEY="gsat-chinese-v1";
-let log=[];try{log=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){}
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(log))}catch(e){}};
-$("#years").innerHTML=[108,109,110,111,112,113,114,115].map(y=>`<a href="${OFFICIAL}" target="_blank" rel="noopener">${y} 學年度</a>`).join("");
-let type="全部",list=[],idx=0,done={};
-async function init(){
- try{Q=await (await fetch("questions.json",{cache:"no-cache"})).json()}
- catch(e){$("#q").innerHTML="<p>讀不到 questions.json。請部署到 GitHub Pages，或在本機用 <code>python -m http.server</code> 開啟。</p>";return}
- drawF();setList();stat()}
-function setList(){list=Q.filter(q=>type=="全部"||q.type==type);idx=0;done={};show()}
-function drawF(){const ts=["全部",...new Set(Q.map(q=>q.type))];
- $("#filters").innerHTML=ts.map(t=>`<button class="${t==type?"on":""}" data-t="${t}">${t}</button>`).join("");
- document.querySelectorAll("#filters button").forEach(b=>b.onclick=()=>{type=b.dataset.t;drawF();setList()})}
-function show(){
- if(!list.length){$("#q").innerHTML="<p>此類別沒有題目。</p>";return}
- if(idx>=list.length){summary();return}
- const q=list[idx],d=done[q.id];
- $("#prog").textContent=`第 ${idx+1} / ${list.length} 題`;
- $("#q").innerHTML=`<div class="tag">${q.type}・${q.multi?"多選題":"單選題"}</div>`+(q.pass?`<div class="pass">${q.pass}</div>`:"")+`<p>${q.stem}</p>`+
- q.opts.map((o,i)=>`<label class="opt"><input type="${q.multi?"checkbox":"radio"}" name="o" value="${i+1}"${d&&d.got.includes(i+1)?" checked":""}> (${i+1}) ${o}</label>`).join("")+`<div id="fb"></div>`;
- $("#chk").disabled=!!d;$("#prev").disabled=idx==0;
- if(d)mark(q,d.got,d.ok)}
-function mark(q,got,ok){
- document.querySelectorAll("#q label").forEach((l,i)=>{const v=String(i+1);if(q.ans.includes(v))l.classList.add("right");else if(got.includes(v))l.classList.add("wrong")});
- $("#fb").innerHTML=`<div class="exp"><b style="color:var(${ok?"--ok":"--ng"})">${ok?"答對了":"答錯了"}</b>　正解：${q.ans.split("").map(c=>"("+c+")").join("")}<br>${q.exp}</div>`}
-$("#chk").onclick=()=>{const q=list[idx],got=[...document.querySelectorAll("input[name=o]:checked")].map(i=>i.value).sort().join("");
- if(!got)return;const ok=got==q.ans;done[q.id]={got,ok};mark(q,got,ok);$("#chk").disabled=true;
- log.push({id:q.id,type:q.type,stem:q.stem.slice(0,18),got,ans:q.ans,ok,t:Date.now()});save();stat()};
-$("#nxt").onclick=()=>{if(idx<list.length){idx++;show()}};
-$("#prev").onclick=()=>{if(idx>0){idx--;show()}};
-function summary(){const r=list.filter(q=>done[q.id]&&done[q.id].ok).length;
- $("#prog").textContent="練習完成";
- $("#q").innerHTML=`<p><b>本輪成績：${r} / ${list.length} 題整題答對</b>（未作答視為未答對）</p><button id="again" class="pri">重新開始</button>`;
- $("#again").onclick=setList;$("#chk").disabled=true;$("#prev").disabled=false}
-function stat(){const n=log.length,r=log.filter(x=>x.ok).length;
- $("#stat").textContent=n?`累計作答 ${n} 題，整題答對率 ${Math.round(r/n*100)}%`:"尚無紀錄";
- $("#wr").innerHTML=log.filter(x=>!x.ok).slice(-15).reverse().map(x=>`<tr><td>${x.stem}…</td><td>${x.type}</td><td>${x.got}</td><td>${x.ans}</td></tr>`).join("")}
-$("#exp").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(log,null,1)],{type:"application/json"}));a.download="chinese-log.json";a.click()};
-$("#clr").onclick=()=>{if(confirm("確定清除？")){log=[];save();stat()}};
+'use strict';
+const CEEC='https://www.ceec.edu.tw/xmfile?xsmsid=0J052424829869345634';
+const PAGE={115:1,114:1,113:2,112:3,111:3,110:4,109:5,108:5};
+const OFF115={exam:'https://www.ceec.edu.tw/files/file_pool/1/0q054337448417166461/01-115%E5%AD%B8%E6%B8%AC%E5%9C%8B%E7%B6%9C%E8%A9%A6%E5%8D%B7.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0q040596675162309932/01-115%E5%AD%B8%E6%B8%AC%E5%9C%8B%E8%AA%9E%E6%96%87%E7%B6%9C%E5%90%88%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0q054338512775247597/07-115%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E8%A9%A6%E5%8D%B7.pdf'};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeRead=(key,def)=>{try{const v=JSON.parse(localStorage.getItem(key));return v??def}catch{return def}};
+const STORE='gsat-chinese-v2',ACTIVE='gsat-chinese-session-v2';
+let db=safeRead(STORE,{attempts:[],history:[],wrong:{},drafts:{}});
+if(!db||typeof db!=='object')db={attempts:[],history:[],wrong:{},drafts:{}};
+for(const k of ['attempts','history'])if(!Array.isArray(db[k]))db[k]=[];
+for(const k of ['wrong','drafts'])if(!db[k]||typeof db[k]!=='object'||Array.isArray(db[k]))db[k]={};
+// Read prior version's answers once without deleting its original record.
+if(!db.importedOld){const legacy=safeRead('gsat-chinese-v1',[]);if(Array.isArray(legacy)&&legacy.length&&!db.attempts.length){db.attempts=legacy.filter(x=>x&&x.id).map(x=>({id:x.id,type:x.type||'舊版',got:x.got||'',ok:!!x.ok,t:x.t||Date.now()}));for(const x of db.attempts)if(!x.ok)db.wrong[x.id]={pending:true,note:'',n:1};}db.importedOld=true;}
+const saveDB=()=>{try{localStorage.setItem(STORE,JSON.stringify(db))}catch(e){console.warn('無法保存',e)}};
+let Q=[],session=null,clockJob=null;
+const saveSession=()=>{try{if(session)localStorage.setItem(ACTIVE,JSON.stringify(session));else localStorage.removeItem(ACTIVE)}catch(e){console.warn('無法保存進度',e)}};
+let oldSession=safeRead(ACTIVE,null);
+const PAPER_PDFS={115:OFF115,114:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0p056424313827932684/01-114%E5%AD%B8%E6%B8%AC%E5%9C%8B%E7%B6%9C%E8%A9%A6%E9%A1%8C.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0p051548831591816379/01-114%E5%AD%B8%E6%B8%AC%E5%9C%8B%E8%AA%9E%E6%96%87%E7%B6%9C%E5%90%88%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0p056425983094832020/07-114%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E8%A9%A6%E9%A1%8C.pdf'},113:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0o051429609806157906/01-113%E5%AD%B8%E6%B8%AC%E5%9C%8B%E7%B6%9C%E8%A9%A6%E9%A1%8C%E5%AE%9A%E7%A8%BF.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0o051429991629874988/01-113%E5%AD%B8%E6%B8%AC%E5%9C%8B%E8%AA%9E%E6%96%87%E7%B6%9C%E5%90%88%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0o051428628384018349/07-113%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E5%AE%9A%E7%A8%BF.pdf'},112:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0n045361284386617720/01-1-112%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%28%E5%9C%8B%E7%B6%9C%29%E8%A9%A6%E5%8D%B7.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0n045361875009344702/01-112%E5%AD%B8%E6%B8%AC%E5%9C%8B%E8%AA%9E%E6%96%87%E7%B6%9C%E5%90%88%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0n045360424111183163/01-2-112%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%28%E5%9C%8B%E5%AF%AB%29%E8%A9%A6%E5%8D%B7.pdf'},111:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0m053395009167828203/01-1-111%E5%AD%B8%E6%B8%AC%E5%9C%8B%E7%B6%9C%E8%A9%A6%E5%8D%B7.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0m052627939544064589/01-111%E5%AD%B8%E6%B8%AC%E5%9C%8B%E8%AA%9E%E6%96%87%E7%B6%9C%E5%90%88%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0m052630661359500564/01-2-111%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf'},110:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0l069610597439395113/110%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%A9%A6%E5%8D%B7.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0l069610788618143168/110%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0l069609618264850656/110%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E8%A9%A6%E5%8D%B7%20.pdf'},109:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0k050365403832359411/01-109%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%28%E9%81%B8%E6%93%87%E9%A1%8C%29%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0k050365523476238449/01-109%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0k050363473023946936/109%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB-%E5%AE%9A%E7%A8%BF.pdf'},108:{exam:'https://www.ceec.edu.tw/files/file_pool/1/0j193641495705823071/01-108%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%28%E9%81%B8%E6%93%87%E9%A1%8C%29%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf',ans:'https://www.ceec.edu.tw/files/file_pool/1/0j193641495349792009/01-108%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E9%81%B8%E6%93%87%E9%A1%8C%E7%AD%94%E6%A1%88.pdf',writing:'https://www.ceec.edu.tw/files/file_pool/1/0j193645027389558635/01-108%E5%AD%B8%E6%B8%AC%E5%9C%8B%E5%AF%AB%E8%A9%A6%E5%8D%B7%E5%AE%9A%E7%A8%BF.pdf'}};
+function paperList(){const root=$('paperGrid');root.replaceChildren();for(let year=115;year>=108;year--){const card=document.createElement('article');card.className='panel paper-card';const old=year<=110;const page=`https://www.ceec.edu.tw/xmfile?page=${PAGE[year]}&xsmsid=0J052424829869345634`;
+const link=(label,url)=>`<a href="${url}" target="_blank" rel="noopener">${label} ↗</a>`;
+card.innerHTML=`<span class="eyebrow">${year} 學年度</span><div class="paper-title">${year} 學測國文</div><div class="kpis"><span class="pill">${old?'國文（選擇題）':'國綜'}</span><span class="pill warm">國寫</span></div><p class="muted">從大考中心原卷與答案資料練習；非選擇題須人工評閱。</p><div class="paper-actions">${link('國文原卷 PDF',PAPER_PDFS[year].exam)+link('選擇題答案 PDF',PAPER_PDFS[year].ans)+link('國寫原卷 PDF',PAPER_PDFS[year].writing)+link('官方資料頁',page)}</div>`;root.append(card);}}
+function tab(name){for(const b of document.querySelectorAll('[data-tab]'))b.classList.toggle('active',b.dataset.tab===name);for(const section of ['papers','practice','writing','wrongs','stats','guide'])$( `view-${section}`).classList.toggle('hidden',section!==name);if(name==='stats')renderStats();if(name==='wrongs')renderWrongs();if(name==='writing')renderWriting();window.scrollTo({top:0,behavior:'instant'});}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+const qMap=()=>new Map(Q.map(x=>[x.id,x]));
+function eligible(){const type=$('category').value,src=$('source').value;return Q.filter(q=>(type==='全部'||q.type===type)&&(src==='all'||(src==='原始'?q.source.includes('原始'):q.source.includes('延伸'))));}
+function updatePoolInfo(){$('poolInfo').textContent=`符合條件 ${eligible().length} 題・本次抽題不重複；題庫共 ${Q.length} 題。`;$('onlyWrong').disabled=!Object.values(db.wrong).some(x=>x.pending);}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function start(kind='normal'){
+ if(session&&!session.finished&&!confirm('開始新的練習會結束目前未完成的輪次。繼續嗎？'))return;
+ let pool=kind==='wrong'?Q.filter(q=>db.wrong[q.id]?.pending):eligible();if(!pool.length){alert('目前沒有符合條件的題目。');return;}
+ if($('random').checked)pool=shuffle(pool);
+ const n=$('count').value==='all'?pool.length:Math.min(pool.length,Number($('count').value));const ids=kind==='wrong'?pool.map(x=>x.id):pool.slice(0,n).map(q=>q.id);
+ session={ids,index:0,answers:{},draft:{},started:Date.now(),endAt:$('timed').checked?Date.now()+90*60*1000:null,finished:false,kind,scope:kind==='wrong'?'待訂正錯題':$('category').value};saveSession();tab('practice');drawQuestion();startClock();
+}
+function startClock(){if(clockJob)clearInterval(clockJob);clockJob=setInterval(tick,1000);tick();}
+function tick(){if(!session||session.finished){$('clock').textContent='未計時';return;}if(!session.endAt){$('clock').textContent='不限時';return;}const diff=session.endAt-Date.now();if(diff<=0){$('clock').textContent='時間到';finishSession(true);return;}const sec=Math.ceil(diff/1000);$('clock').textContent=`${Math.floor(sec/60).toString().padStart(2,'0')}:${(sec%60).toString().padStart(2,'0')}`;$('clock').classList.toggle('warn',diff<10*60*1000)}
+function drawQuestion(){const body=$('questionBody');if(!session){body.innerHTML='<div class="empty">選擇題型與題數後，按「開始新一輪練習」。</div>';$('qActions').hidden=true;$('resume').disabled=true;return;}
+ $('resume').disabled=false;
+ if(session.finished){drawDone();return;}
+ const id=session.ids[session.index],q=qMap().get(id);if(!q){body.innerHTML='<div class="notice">題庫已變更，找不到本題。請開始新一輪練習。</div>';$('qActions').hidden=true;return;}
+ const record=session.answers[id],draft=session.draft[id]||[],correctCount=Object.values(session.answers).filter(a=>a.ok).length,wrongCount=Object.values(session.answers).filter(a=>!a.ok).length;
+ $('stage').textContent=`${session.kind==='wrong'?'錯題複習':'自編國綜題庫'} · ${q.type}`;$('qProgress').textContent=`第 ${session.index+1} / ${session.ids.length} 題 · 已檢查 ${Object.keys(session.answers).length} 題`;$('qScore').textContent=`答對 ${correctCount} · 答錯 ${wrongCount}`;$('progressBar').style.width=`${Object.keys(session.answers).length/session.ids.length*100}%`;
+ body.innerHTML=`<div class="question-meta"><span class="pill">${esc(q.type)}</span><span class="mini-tag">${esc(q.source||'自編題')} · ${q.multi?'多選題':'單選題'}</span></div><h3 class="question-no">第 ${session.index+1} 題</h3>${q.pass?`<div class="passage">${esc(q.pass)}</div>`:''}<p class="stem">${esc(q.stem)}</p><div id="choices">${q.opts.map((opt,i)=>`<label class="choice" data-n="${i+1}"><input type="${q.multi?'checkbox':'radio'}" name="choice" value="${i+1}" ${record||draft.includes(String(i+1))?'':''}${(record?record.got:draft.join('')).includes(String(i+1))?'checked':''} ${record?'disabled':''}><span class="choice-index">${i+1}</span><span>${esc(opt)}</span></label>`).join('')}</div><div id="qFeedback" role="status" aria-live="polite"></div>`;
+ for(const inp of body.querySelectorAll('input[name=choice]'))inp.onchange=()=>{session.draft[id]=[...body.querySelectorAll('input[name=choice]:checked')].map(i=>i.value);saveSession()};
+ $('qActions').hidden=false;$('prev').disabled=session.index===0;$('check').disabled=!!record;$('unknown').disabled=!!record;$('next').textContent=session.index===session.ids.length-1?'完成本輪 →':'下一題 →';
+ if(record)markCurrent(q,record);
+}
+function markCurrent(q,a){for(const el of document.querySelectorAll('#choices .choice')){const n=el.dataset.n;el.classList.toggle('right',q.ans.includes(n));el.classList.toggle('wrong',!q.ans.includes(n)&&a.got.includes(n));}
+ $('qFeedback').innerHTML=`<div class="feedback ${a.ok?'':'bad'}"><strong>${a.ok?'✓ 答對了':'✕ 已加入錯題'}</strong>正解：${q.ans.split('').map(x=>`（${x}）`).join('')}<p style="margin:7px 0 0">${esc(q.exp||'')}</p></div>`;
+}
+function grade(unknown=false){if(!session||session.finished)return;const id=session.ids[session.index];if(session.answers[id])return;const q=qMap().get(id);if(!q)return;const got=unknown?'':[...document.querySelectorAll('#choices input:checked')].map(x=>x.value).sort().join('');if(!got&&!unknown){alert('請先選擇答案，或按「不會・顯示答案」。');return;}
+ const ok=got===q.ans;session.answers[id]={got,ok,t:Date.now()};db.attempts.push({id:q.id,type:q.type,got,ok,t:Date.now()});if(ok){if(db.wrong[id])db.wrong[id].pending=false;}else{const x=db.wrong[id]||{n:0,note:''};x.n=(x.n||0)+1;x.pending=true;db.wrong[id]=x;}saveDB();saveSession();drawQuestion();updatePoolInfo();}
+function next(){if(!session||session.finished)return;if(session.index>=session.ids.length-1){finishSession(false)}else{session.index++;saveSession();drawQuestion()}}
+function finishSession(timedOut){if(!session||session.finished)return;session.finished=true;session.timedOut=timedOut;const yes=Object.values(session.answers).filter(a=>a.ok).length;db.history.unshift({t:Date.now(),kind:session.kind,scope:session.scope,total:session.ids.length,checked:Object.keys(session.answers).length,correct:yes,timedOut});db.history=db.history.slice(0,150);saveDB();saveSession();drawDone();if(clockJob)clearInterval(clockJob);}
+function drawDone(){const total=session.ids.length,graded=Object.keys(session.answers).length,correct=Object.values(session.answers).filter(x=>x.ok).length;$('stage').textContent='PRACTICE COMPLETED';$('qProgress').textContent='已完成本輪';$('qScore').textContent=`整題答對 ${correct} / ${total}`;$('progressBar').style.width='100%';$('qActions').hidden=true;
+ $('questionBody').innerHTML=`<div class="summary"><h3>${session.timedOut?'時間到，已結束練習':'本輪練習完成'}</h3><p><strong>${correct} / ${total} 題</strong>　正確率 ${Math.round(correct/total*100)}%</p><p class="muted">已檢查 ${graded} 題，未作答 ${total-graded} 題；多選題採完全正確才算答對。</p><button class="btn primary" id="againNow" type="button">再練一輪</button> <button class="btn" id="toStats" type="button">查看成績</button></div>`;
+ $('againNow').onclick=()=>start(session.kind==='wrong'?'wrong':'normal');$('toStats').onclick=()=>tab('stats');$('resume').disabled=true;}
+$('start').onclick=()=>start('normal');$('onlyWrong').onclick=()=>start('wrong');$('resume').onclick=()=>{if(session&&!session.finished){tab('practice');drawQuestion();startClock()}};
+$('prev').onclick=()=>{if(session&&session.index>0){session.index--;saveSession();drawQuestion()}};$('next').onclick=next;$('check').onclick=()=>grade(false);$('unknown').onclick=()=>grade(true);
+$('category').onchange=$('source').onchange=updatePoolInfo;
+function renderWrongs(){const pool=Q.filter(q=>db.wrong[q.id]?.pending);$('wrongList').replaceChildren();if(!pool.length){$('wrongList').innerHTML='<div class="panel empty">目前沒有待訂正錯題。完成一輪單題練習後會顯示在這裡。</div>';return;}
+ for(const q of pool){const box=document.createElement('article');box.className='wrong-card';box.innerHTML=`<div class="split"><div class="title">${esc(q.type)} · ${esc(q.stem)}</div><span class="pill warm">累計錯 ${db.wrong[q.id].n||1} 次</span></div><p class="small muted">${esc(q.exp)}</p><label class="small" for="note-${esc(q.id)}"><strong>我的訂正筆記</strong></label><textarea id="note-${esc(q.id)}" placeholder="這次錯在哪裡？下次要怎麼判斷？">${esc(db.wrong[q.id].note||'')}</textarea>`;const t=box.querySelector('textarea');t.oninput=()=>{db.wrong[q.id].note=t.value;saveDB()};$('wrongList').append(box)} }
+$('practiceWrongs').onclick=()=>start('wrong');
+const WRITINGS=[
+ {id:'w1',title:'科技讓生活更便利，也帶來哪些代價？',prompt:'請從生活經驗出發，先描述科技帶來的便利，再討論你認為值得注意的一項代價，最後提出自己的因應方式。',checks:['是否有具體的生活經驗？','是否提出明確觀點，並用例子支持？','是否有適切的結尾？']},
+ {id:'w2',title:'一次改變我看法的對話',prompt:'請記敘一次與他人討論後，自己改變或重新思考原有看法的經驗。說明對話內容、當時的心情，以及得到的啟發。',checks:['事件的背景、衝突和結果是否清楚？','是否寫出觀點改變的原因？','情感表達是否自然具體？']},
+ {id:'w3',title:'在速度與深度之間',prompt:'現代生活強調快速取得資訊，也有人主張慢慢閱讀與思考更有價值。請表達你對兩者的看法，並提出例證。',checks:['是否明確定義自己重視的價值？','有沒有具體例證，而非空泛口號？','是否兼顧不同觀點，結論完整？']},
+ {id:'w4',title:'一個值得保留下來的地方',prompt:'請描述一個對你有特別意義的地方，可以是校園角落、社區空間或自然景點，說明它為何值得保留及你從中體會到的意義。',checks:['有沒有足夠的感官或環境細節？','是否連結個人的經驗與感受？','是否說清楚值得保留的理由？']}
+];
+$('writingSelect').innerHTML=WRITINGS.map(w=>`<option value="${w.id}">${esc(w.title)}</option>`).join('');
+function currentWriting(){return WRITINGS.find(w=>w.id===$('writingSelect').value)||WRITINGS[0]}
+function renderWriting(){const w=currentWriting();$('writingTitle').textContent=w.title;$('writingPrompt').textContent=w.prompt;$('writingText').value=db.drafts[w.id]||'';$('writingChecks').innerHTML=w.checks.map(c=>`<label class="checkline"><input type="checkbox"> ${esc(c)}</label>`).join('');updateWritingCount()}
+function updateWritingCount(){$('writingCount').textContent=$('writingText').value.replace(/\s/g,'').length+' 字（不含空白）'}
+$('writingSelect').onchange=renderWriting;$('writingText').oninput=()=>{db.drafts[currentWriting().id]=$('writingText').value;saveDB();updateWritingCount();$('writingSaved').textContent='草稿已儲存於本機'};
+function download(name,content,mime){const blob=new Blob([content],{type:mime});const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+$('writingDownload').onclick=()=>download('gsat-chinese-writing.txt',`${currentWriting().title}\n\n${$('writingText').value}`,'text/plain;charset=utf-8');$('writingClear').onclick=()=>{if(confirm('清空目前這一篇國寫草稿？')){$('writingText').value='';db.drafts[currentWriting().id]='';saveDB();updateWritingCount()}};
+function renderStats(){const at=db.attempts;const total=at.length,yes=at.filter(x=>x.ok).length,pending=Object.values(db.wrong).filter(x=>x.pending).length;
+ const chips=[['累計作答',total+' 題'],['累計整題正確率',total?Math.round(yes/total*100)+'%':'—'],['待訂正錯題',pending+' 題'],['完成練習輪次',db.history.length+' 次']];
+ $('statsChips').innerHTML=chips.map(([k,v])=>`<div class="panel"><span class="small muted">${k}</span><h2 style="margin:8px 0 0">${v}</h2></div>`).join('');
+ const types=[...new Set(Q.map(q=>q.type))];$('typeStats').innerHTML=types.map(t=>{const items=at.filter(a=>a.type===t),r=items.filter(a=>a.ok).length,p=items.length?Math.round(r/items.length*100):0;return `<div><div class="split small"><b>${esc(t)}</b><span class="muted">${items.length?r+'/'+items.length+' · '+p+'%':'尚未練習'}</span></div><div class="bar"><span style="width:${p}%"></span></div></div>`}).join('');
+ $('historyTable').innerHTML=db.history.map(h=>`<tr><td>${new Date(h.t).toLocaleString('zh-TW')}</td><td>${esc(h.scope||h.kind)}</td><td>${h.correct} / ${h.total}</td><td>${Math.round(h.correct/h.total*100)}%</td></tr>`).join('')||'<tr><td colspan="4" class="muted">尚無紀錄</td></tr>';}
+$('exportData').onclick=()=>download('gsat-chinese-records.json',JSON.stringify({version:2,exportedAt:new Date().toISOString(),data:db},null,2),'application/json');
+$('importData').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const j=JSON.parse(await f.text());const d=j.data||j;if(!Array.isArray(d.attempts)||!Array.isArray(d.history)||typeof d.wrong!=='object'||typeof d.drafts!=='object')throw Error('格式不相容');if(!confirm('匯入會取代目前的學習紀錄，確定繼續嗎？'))return;db=d;saveDB();renderStats();renderWrongs();updatePoolInfo()}catch{alert('無法匯入：不是本網站的備份 JSON。')}finally{e.target.value=''}};
+$('clearData').onclick=()=>{if(confirm('確定清除所有國綜練習、錯題、成績及國寫草稿？此動作不可復原。')){db={attempts:[],history:[],wrong:{},drafts:{},importedOld:true};saveDB();session=null;saveSession();drawQuestion();renderStats();updatePoolInfo()}};
+async function init(){paperList();renderWriting();try{const res=await fetch('questions.json',{cache:'no-cache'});if(!res.ok)throw Error('HTTP '+res.status);const j=await res.json();if(!Array.isArray(j))throw Error('題庫不是陣列');Q=j.filter(q=>q?.id&&q.type&&q.stem&&Array.isArray(q.opts)&&q.opts.length>=2&&typeof q.ans==='string');const ts=[...new Set(Q.map(q=>q.type))];for(const t of ts){let op=document.createElement('option');op.value=t;op.textContent=t;$('category').append(op)}updatePoolInfo();if(oldSession?.ids?.length){session=oldSession;$('resume').disabled=!!session.finished;if(!session.finished){drawQuestion();startClock()}}}catch(e){$('poolInfo').textContent='無法載入 questions.json，請確認與 index.html 放在同一層。';$('questionBody').innerHTML='<div class="notice">題庫載入失敗。若直接以檔案開啟，請改用 GitHub Pages 或本機伺服器。</div>';console.error(e)}saveDB()}
 init();
 </script>
 </body>
